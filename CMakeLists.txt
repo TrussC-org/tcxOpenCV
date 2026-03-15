@@ -9,6 +9,9 @@ set(ADDON_NAME tcxOpenCv)
 # -----------------------------------------------------------------------------
 include(FetchContent)
 
+# Build static libraries (no dylib dependencies for distribution)
+set(BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE)
+
 # OpenCV build options - minimize build time
 set(BUILD_LIST "core,imgproc,imgcodecs,videoio,objdetect,features2d,calib3d" CACHE STRING "" FORCE)
 set(BUILD_opencv_apps OFF CACHE BOOL "" FORCE)
@@ -33,6 +36,9 @@ set(WITH_ITT OFF CACHE BOOL "" FORCE)
 set(WITH_EIGEN OFF CACHE BOOL "" FORCE)
 set(WITH_PROTOBUF OFF CACHE BOOL "" FORCE)
 set(WITH_QUIRC OFF CACHE BOOL "" FORCE)
+set(WITH_OPENEXR OFF CACHE BOOL "" FORCE)
+set(WITH_TIFF OFF CACHE BOOL "" FORCE)
+set(WITH_OPENJPEG OFF CACHE BOOL "" FORCE)
 set(OPENCV_GENERATE_PKGCONFIG OFF CACHE BOOL "" FORCE)
 
 # Use system zlib to avoid macOS SDK compatibility issues
@@ -51,7 +57,7 @@ endif()
 FetchContent_Declare(
     opencv
     GIT_REPOSITORY https://github.com/opencv/opencv.git
-    GIT_TAG 4.10.0
+    GIT_TAG 4.12.0
     GIT_SHALLOW TRUE
     GIT_PROGRESS TRUE
 )
