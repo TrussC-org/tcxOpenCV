@@ -63,12 +63,14 @@ FetchContent_Declare(
 )
 
 # Suppress cmake_minimum_required deprecation from OpenCV internals (CMake 4.x)
-set(CMAKE_WARN_DEPRECATED OFF)
+set(CMAKE_WARN_DEPRECATED OFF CACHE BOOL "" FORCE)
+set(CMAKE_SUPPRESS_DEVELOPER_WARNINGS ON CACHE BOOL "" FORCE)
 
 message(STATUS "tcxOpenCv: Fetching OpenCV (this may take a while on first build)...")
 FetchContent_MakeAvailable(opencv)
 
-set(CMAKE_WARN_DEPRECATED ON)
+set(CMAKE_WARN_DEPRECATED ON CACHE BOOL "" FORCE)
+set(CMAKE_SUPPRESS_DEVELOPER_WARNINGS OFF CACHE BOOL "" FORCE)
 
 # -----------------------------------------------------------------------------
 # Addon library (INTERFACE - header-only, links to OpenCV)
