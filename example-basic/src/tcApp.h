@@ -1,7 +1,7 @@
 #pragma once
 
 #include <TrussC.h>
-#include <tcxOpenCv.h>
+#include <tcxOpenCV.h>
 
 using namespace std;
 using namespace tc;

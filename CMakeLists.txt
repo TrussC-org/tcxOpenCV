@@ -1,8 +1,8 @@
 # =============================================================================
-# tcxOpenCv - OpenCV integration addon for TrussC
+# tcxOpenCV - OpenCV integration addon for TrussC
 # =============================================================================
 
-set(ADDON_NAME tcxOpenCv)
+set(ADDON_NAME tcxOpenCV)
 
 # -----------------------------------------------------------------------------
 # FetchContent: OpenCV
@@ -66,7 +66,7 @@ FetchContent_Declare(
 set(CMAKE_WARN_DEPRECATED OFF CACHE BOOL "" FORCE)
 set(CMAKE_SUPPRESS_DEVELOPER_WARNINGS ON CACHE BOOL "" FORCE)
 
-message(STATUS "tcxOpenCv: Fetching OpenCV (this may take a while on first build)...")
+message(STATUS "tcxOpenCV: Fetching OpenCV (this may take a while on first build)...")
 FetchContent_MakeAvailable(opencv)
 
 set(CMAKE_WARN_DEPRECATED ON CACHE BOOL "" FORCE)

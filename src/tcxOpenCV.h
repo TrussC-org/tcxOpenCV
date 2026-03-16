@@ -1,7 +1,7 @@
 #pragma once
 
 // =============================================================================
-// tcxOpenCv.h - OpenCV integration for TrussC
+// tcxOpenCV.h - OpenCV integration for TrussC
 // =============================================================================
 //
 // This addon provides minimal glue between TrussC and OpenCV.
@@ -9,7 +9,7 @@
 // type conversion between tc:: and cv:: types.
 //
 // Usage:
-//   #include <tcxOpenCv.h>
+//   #include <tcxOpenCV.h>
 //   using namespace tc;
 //
 //   Image img;

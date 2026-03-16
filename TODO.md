@@ -1,4 +1,4 @@
-# tcxOpenCv - Development Plan
+# tcxOpenCV - Development Plan
 
 ## Overview
 
@@ -8,14 +8,14 @@ This is a **separate repository** due to OpenCV's license complexity (BSD/Apache
 ## Design Decisions
 
 ### Naming
-- Folder: `tcxOpenCv` (follows TrussC addon convention)
-- Repository: `tcxOpenCv` (independent repo, users clone into `addons/`)
+- Folder: `tcxOpenCV` (follows TrussC addon convention)
+- Repository: `tcxOpenCV` (independent repo, users clone into `addons/`)
 
 ### Namespace Strategy
 
 **Option A: Minimal glue (recommended)**
 ```cpp
-#include <tcxOpenCv.h>
+#include <tcxOpenCV.h>
 using namespace tc;
 
 // Conversion utilities with clear naming (no collision with other addons)
@@ -100,13 +100,13 @@ Alternative: `find_package(OpenCV)` for users who prefer system OpenCV.
 ## Directory Structure
 
 ```
-tcxOpenCv/
+tcxOpenCV/
 ├── CMakeLists.txt
 ├── LICENSE                 # MIT (this addon)
 ├── README.md               # Usage, OpenCV license notice
 ├── TODO.md                 # This file
 ├── src/
-│   ├── tcxOpenCv.h         # Main header (includes everything)
+│   ├── tcxOpenCV.h         # Main header (includes everything)
 │   ├── tcxCvConvert.h      # Type conversion utilities
 │   ├── tcxCvContour.h      # Contour detection helpers (optional)
 │   └── tcxCvFlow.h         # Optical flow helpers (optional)
@@ -180,20 +180,20 @@ Only if patterns emerge from examples that need simplification.
 
 ## ArUco Strategy
 
-**Decision: Separate addon (tcxAruco) depending on tcxOpenCv**
+**Decision: Separate addon (tcxAruco) depending on tcxOpenCV**
 
 Reasons:
 - ArUco is its own domain (marker detection, board management, camera calibration)
 - OpenCV 4.11+ has ArUco in main modules (`cv::objdetect`), no contrib needed
 - Follows tcxWebSocket → tcxTls dependency pattern
-- Users who don't need ArUco get a lighter tcxOpenCv
+- Users who don't need ArUco get a lighter tcxOpenCV
 
 Future structure:
 ```
 addons/
-├── tcxOpenCv/     # This addon - basic cv integration
-└── tcxAruco/      # Separate repo, depends on tcxOpenCv
-    ├── addons.make: tcxOpenCv
+├── tcxOpenCV/     # This addon - basic cv integration
+└── tcxAruco/      # Separate repo, depends on tcxOpenCV
+    ├── addons.make: tcxOpenCV
     └── ...
 ```
 

@@ -1,4 +1,4 @@
-# tcxOpenCv
+# tcxOpenCV
 
 OpenCV integration addon for [TrussC](https://trussc.org).
 
@@ -10,13 +10,13 @@ Clone this repository into your TrussC `addons/` folder:
 
 ```bash
 cd path/to/TrussC/addons
-git clone https://github.com/TrussC-org/tcxOpenCv.git
+git clone https://github.com/TrussC-org/tcxOpenCV.git
 ```
 
-Then add `tcxOpenCv` to your project's `addons.make`:
+Then add `tcxOpenCV` to your project's `addons.make`:
 
 ```
-tcxOpenCv
+tcxOpenCV
 ```
 
 That's it! OpenCV 4.10.0 will be automatically fetched and built on first compile.
@@ -25,7 +25,7 @@ That's it! OpenCV 4.10.0 will be automatically fetched and built on first compil
 
 ```cpp
 #include <TrussC.h>
-#include <tcxOpenCv.h>
+#include <tcxOpenCV.h>
 
 using namespace std;
 using namespace tc;

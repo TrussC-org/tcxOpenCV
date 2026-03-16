@@ -1,5 +1,5 @@
 // =============================================================================
-// tcxOpenCv example-basic
+// tcxOpenCV example-basic
 // Demonstrates basic type conversion between TrussC and OpenCV
 // =============================================================================
 
@@ -49,7 +49,7 @@ void tcApp::draw() {
     drawBitmapStringHighlight("Blurred (OpenCV GaussianBlur)", original.getWidth() + 30, imgY - 10, bg);
 
     // Draw info
-    drawBitmapStringHighlight("tcxOpenCv Example - Type Conversion Demo", 10, 20, bg, colors::yellow);
+    drawBitmapStringHighlight("tcxOpenCV Example - Type Conversion Demo", 10, 20, bg, colors::yellow);
 
     drawBitmapStringHighlight("Blur Size: " + to_string(blurSize), 10, getHeight() - 40, bg, colors::white);
     drawBitmapStringHighlight("[UP/DOWN] size  [SPACE] reset", 10, getHeight() - 20, bg, colors::white);
@@ -89,5 +89,5 @@ void tcApp::createTestPattern() {
 int main() {
     return runApp<tcApp>(WindowSettings()
         .setSize(960, 600)
-        .setTitle("tcxOpenCv - Basic Example"));
+        .setTitle("tcxOpenCV - Basic Example"));
 }
