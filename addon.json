@@ -1,0 +1,11 @@
+{
+  "name": "tcxOpenCV",
+  "description": "OpenCV integration for computer vision",
+  "author": "tettou771",
+  "license": "MIT",
+  "keywords": [
+    "opencv",
+    "computer-vision",
+    "image-processing"
+  ]
+}
