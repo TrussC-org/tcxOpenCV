@@ -3,6 +3,7 @@
   "description": "OpenCV integration for computer vision",
   "author": "tettou771",
   "license": "MIT",
+  "category": "computer-vision",
   "keywords": [
     "opencv",
     "computer-vision",
