@@ -12,6 +12,12 @@ include(FetchContent)
 # Build static libraries (no dylib dependencies for distribution)
 set(BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE)
 
+# Match TrussC's dynamic MSVC runtime (/MD). OpenCV defaults its static libs to
+# a static CRT (/MT) on Windows, which collides with the app's /MD runtime at
+# link time (LNK2038 RuntimeLibrary mismatch -> LNK2005/LNK1169). Force OpenCV
+# onto the dynamic CRT so both sides agree. No-op on non-MSVC toolchains.
+set(BUILD_WITH_STATIC_CRT OFF CACHE BOOL "" FORCE)
+
 # OpenCV build options - minimize build time
 set(BUILD_LIST "core,imgproc,imgcodecs,videoio,objdetect,features2d,calib3d" CACHE STRING "" FORCE)
 set(BUILD_opencv_apps OFF CACHE BOOL "" FORCE)
