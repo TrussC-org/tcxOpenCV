@@ -8,7 +8,7 @@
 #include <opencv2/core.hpp>
 #include <opencv2/imgproc.hpp>
 
-namespace tcx {
+namespace tcx::opencv {
 
 // =============================================================================
 // Image/Mat conversion
@@ -219,4 +219,14 @@ inline std::vector<std::vector<tc::Vec2>> toTcContours(
     return result;
 }
 
-} // namespace tcx
+} // namespace tcx::opencv
+
+// -----------------------------------------------------------------------------
+// Backward compatibility. The canonical namespace is now `tcx::opencv`. These
+// silent aliases keep older code compiling: flat `tcx::toCvMat` and legacy
+// `trussc::toCvMat`. DEPRECATED — removed in v1.0.0.
+// (No [[deprecated]] attribute: under the usual `using namespace tc;` it would
+//  warn on idiomatic unqualified use too. See tcxOpenCV README for migration.)
+// -----------------------------------------------------------------------------
+namespace tcx    { using opencv::toCvMat; using opencv::toCvMatRGBA; using opencv::toTcImage; using opencv::toCvScalar; using opencv::toTcColor; using opencv::toCvPoint; using opencv::toCvPointI; using opencv::toTcVec2; using opencv::toCvRect; using opencv::toTcRect; using opencv::toTcContours; } // deprecated: remove at v1.0.0
+namespace trussc { using tcx::opencv::toCvMat; using tcx::opencv::toCvMatRGBA; using tcx::opencv::toTcImage; using tcx::opencv::toCvScalar; using tcx::opencv::toTcColor; using tcx::opencv::toCvPoint; using tcx::opencv::toCvPointI; using tcx::opencv::toTcVec2; using tcx::opencv::toCvRect; using tcx::opencv::toTcRect; using tcx::opencv::toTcContours; } // deprecated: remove at v1.0.0
